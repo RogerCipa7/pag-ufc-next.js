@@ -11,7 +11,7 @@
 
 [🌐 Ver en vivo](https://pag-ufc-next-js.vercel.app/) · [📂 Repositorio](https://github.com/RogerCipa7/pag-ufc-next.js) · [🐛 Reportar un bug](https://github.com/RogerCipa7/pag-ufc-next.js/issues)
 
-![UFC Fan Preview](https://images.unsplash.com/photo-1517438476312-10d79c077509?w=1200&h=400&fit=crop&q=80)
+![UFC Fan Preview](https://www.estilomma.com/images/noticias/thumbnails/que%CC%81%20es%20la%20ufc_thumb_1300x725.jpg)
 
 </div>
 
