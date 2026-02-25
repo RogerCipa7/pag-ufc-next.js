@@ -1,99 +1,88 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  headers: async () => [
-    {
-      source: '/:path*',
-      headers: [
-        {
-          key: 'Content-Security-Policy',
-          value: "frame-ancestors 'self' https://www.youtube.com https://youtu.be;",
-        },
-      ],
-    },
-  ],
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: `
+              frame-ancestors 'self' https://www.youtube.com https://youtu.be;
+            `
+              .replace(/\n/g, "")
+              .trim(),
+          },
+        ],
+      },
+    ];
+  },
+
   images: {
     remotePatterns: [
-      // ─── YouTube (miniaturas) ───────────────────────────────────
+      // YouTube
       {
-        protocol: 'https',
-        hostname: 'i.ytimg.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "i.ytimg.com",
       },
       {
-        protocol: 'https',
-        hostname: 'img.youtube.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "img.youtube.com",
       },
 
-      // ─── Wikimedia Commons ──────────────────────────────────────
+      // Wikimedia
       {
-        protocol: 'https',
-        hostname: 'upload.wikimedia.org',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
       },
 
-      // ─── UFC Español (imágenes oficiales) ───────────────────────
+      // UFC
       {
-        protocol: 'https',
-        hostname: 'www.ufcespanol.com',
-        pathname: '/images/**',
+        protocol: "https",
+        hostname: "www.ufcespanol.com",
       },
 
-      // ─── ESPN (imágenes de luchadores) ──────────────────────────
+      // ESPN
       {
-        protocol: 'https',
-        hostname: 'a.espncdn.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "a.espncdn.com",
       },
       {
-        protocol: 'https',
-        hostname: 'www.espn.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "www.espn.com",
       },
 
-      // ─── Pinterest ──────────────────────────────────────────────
+      // Pinterest
       {
-        protocol: 'https',
-        hostname: 'i.pinimg.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "i.pinimg.com",
       },
       {
-        protocol: 'https',
-        hostname: 's.pinimg.com',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'pinterest.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "s.pinimg.com",
       },
 
-      // ─── Otros dominios ─────────────────────────────────────────
+      // Otros
       {
-        protocol: 'https',
-        hostname: 'www.fightsports.tv',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "www.fightsports.tv",
       },
       {
-        protocol: 'https',
-        hostname: 'st1.uvnimg.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "st1.uvnimg.com",
       },
       {
-        protocol: 'https',
-        hostname: 'static.foxdeportes.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "static.foxdeportes.com",
       },
       {
-        protocol: 'https',
-        hostname: 'trome.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "trome.com",
       },
-          {
-      protocol: 'https',
-      hostname: 'flagcdn.com',
-      pathname: '/**',
-    },
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+      },
     ],
   },
 };

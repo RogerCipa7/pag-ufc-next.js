@@ -1,11 +1,11 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  Trophy, Calendar, Sword, Play, ChevronRight, 
-  Flame, Shield, Users, LucideIcon, ArrowUp 
+import {
+  Trophy, Calendar, Sword, Play, ChevronRight,
+  Flame, Shield, Users, LucideIcon, ArrowUp
 } from 'lucide-react';
-import { useEffect, useCallback, useMemo, useRef } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 
 // =========================================
 // TIPOS PARA TYPESCRIPT
@@ -292,7 +292,7 @@ export default function Home() {
               {/* Quote */}
               <blockquote className="mt-8 p-6 border-l-4 border-ufc-red bg-gradient-to-r from-ufc-red/10 to-transparent rounded-r-lg italic">
                 <p className="text-white text-lg font-medium leading-relaxed">
-                  "El UFC no es solo un deporte, es un estilo de vida. Representa la lucha, la disciplina y el honor."
+                  {"\"El UFC no es solo un deporte, es un estilo de vida. Representa la lucha, la disciplina y el honor.\""}
                 </p>
                 <footer className="flex items-center gap-3 mt-4">
                   <div className="w-10 h-10 rounded-full bg-ufc-dark border border-ufc-gold flex items-center justify-center">
@@ -311,9 +311,8 @@ export default function Home() {
               {gallery.map((item, index) => (
                 <div
                   key={item.title}
-                  className={`group relative rounded-2xl overflow-hidden shadow-xl transition-transform duration-300 hover:scale-[1.02] ${
-                    item.featured ? 'col-span-2 h-64 md:h-72' : 'h-40 md:h-44'
-                  }`}
+                  className={`group relative rounded-2xl overflow-hidden shadow-xl transition-transform duration-300 hover:scale-[1.02] ${item.featured ? 'col-span-2 h-64 md:h-72' : 'h-40 md:h-44'
+                    }`}
                 >
                   <Image
                     src={item.src}
@@ -325,9 +324,8 @@ export default function Home() {
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />
 
-                  <div className={`absolute inset-0 bg-gradient-to-t ${
-                    item.featured ? 'from-black/90' : 'from-black/80'
-                  } to-transparent`} />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${item.featured ? 'from-black/90' : 'from-black/80'
+                    } to-transparent`} />
 
                   {item.featured && (
                     <div className="absolute top-4 right-4 bg-ufc-red text-white text-xs font-bold px-3 py-1 rounded-full">

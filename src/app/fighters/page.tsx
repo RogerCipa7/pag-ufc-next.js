@@ -478,36 +478,36 @@ export default function FightersPage() {
   return (
     <div className="bg-ufc-black min-h-screen pt-20 pb-16 animate-fadeIn">
       {/* Hero */}
-<section className="relative pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-20 px-4 border-b bg-gradient-to-b from-ufc-dark to-ufc-black border-ufc-gold/30">
-  <div className="max-w-6xl mx-auto text-center">
-    <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white uppercase tracking-tight">
-      Luchadores <span className="text-ufc-red">Élite</span>
-    </h1>
+      <section className="relative pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-20 px-4 border-b bg-gradient-to-b from-ufc-dark to-ufc-black border-ufc-gold/30">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white uppercase tracking-tight">
+            Luchadores <span className="text-ufc-red">Élite</span>
+          </h1>
 
-    <p className="text-base sm:text-lg md:text-xl text-ufc-gray/90 mt-4 sm:mt-6 max-w-3xl mx-auto leading-relaxed">
-      Campeones actuales y leyendas que definieron la historia del octágono.
-    </p>
+          <p className="text-base sm:text-lg md:text-xl text-ufc-gray/90 mt-4 sm:mt-6 max-w-3xl mx-auto leading-relaxed">
+            Campeones actuales y leyendas que definieron la historia del octágono.
+          </p>
 
-    <div className="flex flex-wrap justify-center gap-12 mt-8 sm:mt-10">
-      <div className="text-center">
-        <div className="text-2xl sm:text-3xl font-black text-ufc-gold">
-          {fightersData.filter((f) => f.champion && !f.legend).length}
+          <div className="flex flex-wrap justify-center gap-12 mt-8 sm:mt-10">
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-black text-ufc-gold">
+                {fightersData.filter((f) => f.champion && !f.legend).length}
+              </div>
+              <div className="text-xs uppercase tracking-widest text-ufc-gray mt-1">
+                Campeones
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-black text-ufc-gold">
+                {fightersData.filter((f) => f.legend).length}
+              </div>
+              <div className="text-xs uppercase tracking-widest text-ufc-gray mt-1">
+                Leyendas
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="text-xs uppercase tracking-widest text-ufc-gray mt-1">
-          Campeones
-        </div>
-      </div>
-      <div className="text-center">
-        <div className="text-2xl sm:text-3xl font-black text-ufc-gold">
-          {fightersData.filter((f) => f.legend).length}
-        </div>
-        <div className="text-xs uppercase tracking-widest text-ufc-gray mt-1">
-          Leyendas
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Filtros */}
       <section className="max-w-7xl mx-auto px-4 py-8">
@@ -533,15 +533,14 @@ export default function FightersPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedFilter(cat)}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
-                    isActive
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${isActive
                       ? isLegend
                         ? 'bg-ufc-gold text-ufc-black shadow-lg shadow-ufc-gold/30'
                         : 'bg-ufc-red text-white'
                       : isLegend
-                      ? 'bg-ufc-gold/10 text-ufc-gold border border-ufc-gold/30 hover:bg-ufc-gold/20'
-                      : 'bg-ufc-dark text-ufc-gray hover:bg-ufc-red/20 hover:text-white border border-transparent'
-                  }`}
+                        ? 'bg-ufc-gold/10 text-ufc-gold border border-ufc-gold/30 hover:bg-ufc-gold/20'
+                        : 'bg-ufc-dark text-ufc-gray hover:bg-ufc-red/20 hover:text-white border border-transparent'
+                    }`}
                 >
                   {isLegend && <Star size={12} />}
                   {cat}
@@ -574,11 +573,10 @@ export default function FightersPage() {
                   <Link
                     key={fighter.id}
                     href={`/fighters/${fighter.id}`}
-                    className={`group relative rounded-xl overflow-hidden border transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl animate-fadeIn ${
-                      isLegend
+                    className={`group relative rounded-xl overflow-hidden border transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl animate-fadeIn ${isLegend
                         ? 'border-ufc-gold/50 hover:border-ufc-gold hover:shadow-ufc-gold/20 bg-gradient-to-b from-[#1a1500] via-ufc-dark to-ufc-black'
                         : 'border-ufc-gray/20 hover:border-ufc-red hover:shadow-ufc-red/20 bg-gradient-to-b from-ufc-dark to-ufc-black'
-                    }`}
+                      }`}
                     style={{ animationDelay: `${index * 80}ms` }}
                   >
                     {/* Borde superior para leyendas */}
@@ -598,9 +596,8 @@ export default function FightersPage() {
                         alt={fighter.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                        className={`object-cover object-top transition-transform duration-500 group-hover:scale-110 ${
-                          imagesLoaded[fighter.id] ? 'opacity-100' : 'opacity-0'
-                        }`}
+                        className={`object-cover object-top transition-transform duration-500 group-hover:scale-110 ${imagesLoaded[fighter.id] ? 'opacity-100' : 'opacity-0'
+                          }`}
                         onLoad={() => handleImageLoad(fighter.id)}
                         priority={index < 4}
                         loading={index < 4 ? 'eager' : 'lazy'}
@@ -614,11 +611,10 @@ export default function FightersPage() {
                       {/* Badge campeón */}
                       {fighter.champion && (
                         <div
-                          className={`absolute top-2 right-2 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 z-10 ${
-                            isLegend
+                          className={`absolute top-2 right-2 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1 z-10 ${isLegend
                               ? 'bg-ufc-gold text-ufc-black shadow-lg shadow-ufc-gold/40'
                               : 'bg-ufc-gold text-ufc-black'
-                          }`}
+                            }`}
                         >
                           <Award size={12} />
                           <span>{isLegend ? 'Ex-C' : 'C'}</span>
@@ -637,19 +633,19 @@ export default function FightersPage() {
                     {/* Información */}
                     <div className={`p-4 ${isLegend ? 'border-t border-ufc-gold/20' : ''}`}>
                       <h3
-                        className={`font-bold text-lg leading-tight ${
-                          isLegend ? 'text-ufc-gold' : 'text-white'
-                        }`}
+                        className={`font-bold text-lg leading-tight ${isLegend ? 'text-ufc-gold' : 'text-white'
+                          }`}
                       >
                         {fighter.name}
                       </h3>
-                      <p className="text-ufc-gray text-sm italic">"{fighter.nickname}"</p>
+                      <p className="text-ufc-gray text-sm italic">
+                        {"\"" + fighter.nickname + "\""}
+                      </p>
 
                       <div className="flex items-center gap-2 mt-2 text-sm">
                         <span
-                          className={`font-semibold ${
-                            isLegend ? 'text-yellow-400' : 'text-ufc-gold'
-                          }`}
+                          className={`font-semibold ${isLegend ? 'text-yellow-400' : 'text-ufc-gold'
+                            }`}
                         >
                           {fighter.record}
                         </span>
@@ -682,20 +678,18 @@ export default function FightersPage() {
 
                       <div className="mt-3 flex items-center justify-between">
                         <span
-                          className={`text-xs px-2 py-1 rounded-full font-medium ${
-                            isLegend
+                          className={`text-xs px-2 py-1 rounded-full font-medium ${isLegend
                               ? 'bg-ufc-gold/15 text-ufc-gold border border-ufc-gold/30'
                               : 'bg-ufc-red/20 text-ufc-red'
-                          }`}
+                            }`}
                         >
                           {fighter.retiredAt ?? fighter.weightClass}
                         </span>
                         <span
-                          className={`text-sm font-medium transition-colors ${
-                            isLegend
+                          className={`text-sm font-medium transition-colors ${isLegend
                               ? 'text-ufc-gray group-hover:text-ufc-gold'
                               : 'text-ufc-gray group-hover:text-ufc-gold'
-                          }`}
+                            }`}
                         >
                           Ver perfil →
                         </span>
@@ -727,9 +721,8 @@ export default function FightersPage() {
       {/* Botón "Volver arriba" */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-6 right-6 z-50 p-3 bg-ufc-red hover:bg-red-700 text-white rounded-full shadow-lg shadow-red-900/40 transition-all duration-300 hover:scale-110 ${
-          showScrollButton ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`fixed bottom-6 right-6 z-50 p-3 bg-ufc-red hover:bg-red-700 text-white rounded-full shadow-lg shadow-red-900/40 transition-all duration-300 hover:scale-110 ${showScrollButton ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
         aria-label="Volver arriba"
       >
         <ArrowUp className="w-5 h-5" />
