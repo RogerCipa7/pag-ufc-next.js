@@ -9,10 +9,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-<!-- 🔗 REEMPLAZA ESTA URL CON TU LINK EN VIVO -->
-[🌐 Ver en vivo]([https://TU-URL-AQUI.vercel.app](https://pag-ufc-next-js.vercel.app/)) · [📂 Repositorio](https://github.com/RogerCipa7/pag-ufc-next.js) · [🐛 Reportar un bug](https://github.com/RogerCipa7/pag-ufc-next.js/issues)
+[🌐 Ver en vivo](https://pag-ufc-next-js.vercel.app/) · [📂 Repositorio](https://github.com/RogerCipa7/pag-ufc-next.js) · [🐛 Reportar un bug](https://github.com/RogerCipa7/pag-ufc-next.js/issues)
 
-![UFC Fan Preview]([https://images.unsplash.com/photo-1555597673-b21d5c935865?w=1200&h=400&fit=crop&q=80](https://www.estilomma.com/blog/que-es-ufc))
+![UFC Fan Preview](https://images.unsplash.com/photo-1517438476312-10d79c077509?w=1200&h=400&fit=crop&q=80)
 
 </div>
 
@@ -142,7 +141,7 @@ Distribuido bajo la licencia **MIT**. Ver [`LICENSE`](./LICENSE) para más infor
 
 **Roger Cipagauta**
 
-[![LinkedIn]([https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roger-cipagauta](https://www.linkedin.com/in/roger-cipagauta-b1626b329/))
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roger-cipagauta-b1626b329/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RogerCipa7)
 
 *Hecho con ❤️ y pasión por el MMA*
