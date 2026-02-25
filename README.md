@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 🥊 UFC Fan — Tu pasión por las artes marciales mixtas
 
-First, run the development server:
+**Explora luchadores, disciplinas y la historia del octágono en una experiencia visual moderna.**
+
+[![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+
+<!-- 🔗 REEMPLAZA ESTA URL CON TU LINK EN VIVO -->
+[🌐 Ver en vivo](https://TU-URL-AQUI.vercel.app) · [📂 Repositorio](https://github.com/RogerCipa7/pag-ufc-next.js) · [🐛 Reportar un bug](https://github.com/RogerCipa7/pag-ufc-next.js/issues)
+
+![UFC Fan Preview](https://images.unsplash.com/photo-1555597673-b21d5c935865?w=1200&h=400&fit=crop&q=80)
+
+</div>
+
+---
+
+## 📖 Sobre el proyecto
+
+**UFC Fan** es una plataforma web dedicada a los amantes de las artes marciales mixtas (MMA). Nació con la idea de crear un espacio donde los fans puedan explorar luchadores, disciplinas, eventos y la historia del octágono — todo con una experiencia visual moderna, animaciones suaves y un diseño 100% responsivo.
+
+> 🚧 **Proyecto en mejora constante** — Se seguirán añadiendo funcionalidades, datos y mejoras de detalle. ¡Las sugerencias son bienvenidas!
+
+---
+
+## ✨ Características principales
+
+| Característica | Descripción |
+|---|---|
+| 🥋 **Listado de luchadores** | Filtros por categoría (Activos, Leyendas, peso) y búsqueda en tiempo real |
+| 👤 **Perfil individual** | Biografía, estadísticas, récord, peleas recientes y logros por luchador |
+| 📚 **Disciplinas MMA** | Las 8 artes marciales fundamentales con vídeos, fortalezas/debilidades y exponentes |
+| ✨ **Animaciones fluidas** | Scroll reveal, fade-in y hover effects para una experiencia premium |
+| 📱 **100% Responsivo** | Diseño adaptado para móviles, tablets y escritorio |
+| 🧭 **Navegación intuitiva** | Navbar fijo, menú móvil desplegable y botón "volver arriba" |
+| 📊 **Datos reales** | Campeones y leyendas del UFC actualizados a 2025 |
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) + clases personalizadas
+- **Iconos:** [Lucide React](https://lucide.dev/)
+- **Banderas:** [react-world-flags](https://www.npmjs.com/package/react-world-flags)
+- **Animaciones:** CSS nativo, Intersection Observer, requestAnimationFrame
+- **Fuentes:** Google Fonts (variable)
+- **Despliegue:** [Vercel](https://vercel.com/)
+
+---
+
+## 🚀 Cómo empezar
+
+### Requisitos previos
+
+- Node.js **18+** y npm/yarn instalados
+
+### Instalación
 
 ```bash
+# 1. Clona el repositorio
+git clone https://github.com/RogerCipa7/pag-ufc-next.js.git
+
+# 2. Entra al directorio
+cd pag-ufc-next.js
+
+# 3. Instala las dependencias
+npm install
+
+# 4. Ejecuta en modo desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador 🎉
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Construir para producción
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📂 Estructura del proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+pag-ufc-next.js/
+├── app/
+│   ├── components/         # Navbar, Footer, ScrollReveal
+│   ├── disciplines/        # Página de disciplinas MMA
+│   ├── fighters/           # Listado y perfiles de luchadores
+│   ├── globals.css         # Estilos globales y animaciones
+│   └── layout.tsx          # Layout principal con metadata
+├── public/                 # Imágenes, favicon y assets
+├── .gitignore
+├── package.json
+├── README.md
+└── tailwind.config.js
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧪 Próximas mejoras
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] Página de próximos eventos del UFC
+- [ ] Comparativa de luchadores cara a cara
+- [ ] Modo oscuro / claro completo
+- [ ] Backend con base de datos para contenido dinámico
+- [ ] Sección de noticias y artículos
+- [ ] Integración con API oficial del UFC
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🤝 Contribuciones
+
+¡Las contribuciones son bienvenidas! Si encuentras un error o tienes una idea de mejora:
+
+1. Haz un **fork** del repositorio
+2. Crea tu rama: `git checkout -b feature/NuevaFuncionalidad`
+3. Haz commit: `git commit -m 'feat: añadir nueva funcionalidad'`
+4. Push a tu rama: `git push origin feature/NuevaFuncionalidad`
+5. Abre un **Pull Request**
+
+Por favor, asegúrate de que tu código sigue la estructura y estilo del proyecto.
+
+---
+
+## 📄 Licencia
+
+Distribuido bajo la licencia **MIT**. Ver [`LICENSE`](./LICENSE) para más información.
+
+---
+
+## 📬 Contacto
+
+<div align="center">
+
+**Roger Cipagauta**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/roger-cipagauta)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RogerCipa7)
+
+*Hecho con ❤️ y pasión por el MMA*
+
+</div>
