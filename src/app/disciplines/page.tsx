@@ -225,7 +225,7 @@ const disciplines = [
     color: 'from-indigo-600 to-indigo-900',
     accentColor: '#6366F1',
     bgGlow: 'rgba(99,102,241,0.08)',
-    videoId: 'jZa8-GS6QB4',
+    videoId: 'RebtT2bFk90',
     description: 'El Judo transforma la fuerza del oponente en su propia debilidad. Sus proyecciones explosivas terminan combates al instante.',
     history: 'Creado por Jigoro Kano en 1882, es el primer arte marcial olímpico. Ronda Rousey demostró su dominio en UFC.',
     stats: { poder: 80, velocidad: 75, resistencia: 78, kos: 55, defensa: 72 },
@@ -478,14 +478,14 @@ export default function DisciplinesPage() {
   return (
     <main className="min-h-screen bg-ufc-black text-white overflow-x-hidden">
       {/* HERO SECTION (sin cambios) */}
-      <section className="relative pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-20 px-4 border-b bg-gradient-to-b from-ufc-dark to-ufc-black border-ufc-gold/30">
+      <section className="relative pt-40 sm:pt-44 lg:pt-52 pb-12 sm:pb-20 px-4 border-b bg-gradient-to-b from-ufc-dark to-ufc-black border-ufc-gold/30">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-1/4 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-ufc-red/5 blur-3xl animate-pulse-soft" />
           <div className="absolute bottom-0 right-1/4 w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-ufc-gold/5 blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
         </div>
 
         <div className="relative max-w-6xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white uppercase tracking-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black italic text-white uppercase tracking-tighter leading-none px-4">
             Las Artes del{' '}
             <span className="text-ufc-red">Octágono</span>
           </h1>
@@ -608,11 +608,10 @@ export default function DisciplinesPage() {
                       <button
                         key={tab}
                         onClick={() => setTab(discipline.id, tab)}
-                        className={`flex-1 px-3 sm:px-5 py-2 rounded-lg text-[0.65rem] sm:text-xs uppercase tracking-widest font-semibold transition-all duration-200 whitespace-nowrap ${
-                          getTab(discipline.id) === tab
-                            ? 'bg-ufc-red text-white shadow-lg shadow-red-900/30'
-                            : 'text-ufc-gray hover:text-white hover:bg-ufc-red/10'
-                        }`}
+                        className={`flex-1 px-3 sm:px-5 py-2 rounded-lg text-[0.65rem] sm:text-xs uppercase tracking-widest font-semibold transition-all duration-200 whitespace-nowrap ${getTab(discipline.id) === tab
+                          ? 'bg-ufc-red text-white shadow-lg shadow-red-900/30'
+                          : 'text-ufc-gray hover:text-white hover:bg-ufc-red/10'
+                          }`}
                       >
                         {tab === 'info' ? 'Información' : tab === 'techniques' ? 'Técnicas' : 'Luchadores'}
                       </button>
@@ -723,9 +722,8 @@ export default function DisciplinesPage() {
       {/* Botón "Volver arriba" */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-6 right-6 z-50 p-3 bg-ufc-red hover:bg-red-700 text-white rounded-full shadow-lg shadow-red-900/40 transition-all duration-300 hover:scale-110 ${
-          showScrollButton ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`fixed bottom-6 right-6 z-50 p-3 bg-ufc-red hover:bg-red-700 text-white rounded-full shadow-lg shadow-red-900/40 transition-all duration-300 hover:scale-110 ${showScrollButton ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
         aria-label="Volver arriba"
       >
         <ArrowUp className="w-5 h-5" />

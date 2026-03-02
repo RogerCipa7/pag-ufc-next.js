@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; 
+import { usePathname } from 'next/navigation';
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { Menu, X, Search, User } from 'lucide-react';
 
@@ -72,9 +72,8 @@ export default function Navbar() {
     <>
       {/* === NAVBAR CONTAINER PRINCIPAL (fixed, sin spacer) === */}
       <div
-        className={`fixed top-0 w-full z-50 bg-ufc-black/95 backdrop-blur-md transition-transform duration-300 ${
-          isVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}
+        className={`fixed top-0 w-full z-50 bg-ufc-black/95 backdrop-blur-md transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+          }`}
       >
         {/* Top bar informativa (solo desktop) */}
         <div className="hidden lg:block bg-ufc-dark/50 border-b border-ufc-black/50">
@@ -115,11 +114,10 @@ export default function Navbar() {
 
         {/* === NAVBAR PRINCIPAL === */}
         <div
-          className={`border-b border-ufc-dark/50 transition-all duration-300 ${
-            scrolled
-              ? 'bg-ufc-black/95 shadow-lg shadow-black/20'
-              : 'bg-transparent'
-          }`}
+          className={`border-b border-white/5 transition-all duration-500 ${scrolled
+              ? 'bg-ufc-black/40 backdrop-blur-2xl shadow-2xl shadow-black/50 py-2'
+              : 'bg-transparent py-4'
+            }`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20 lg:h-24">
@@ -144,17 +142,15 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     // 👇 Eliminamos onClick y usamos isActive
-                    className={`relative px-5 py-3 text-base font-semibold transition-colors duration-200 ${
-                      isActive(link.href)
+                    className={`relative px-5 py-3 text-base font-semibold transition-colors duration-200 ${isActive(link.href)
                         ? 'text-ufc-red'
                         : 'text-white hover:text-ufc-red'
-                    }`}
+                      }`}
                   >
                     {link.label}
                     <span
-                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-ufc-red transition-all duration-300 ${
-                        isActive(link.href) ? 'w-8' : 'w-0 group-hover:w-6'
-                      }`}
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-ufc-red transition-all duration-300 ${isActive(link.href) ? 'w-8' : 'w-0 group-hover:w-6'
+                        }`}
                     />
                   </Link>
                 ))}
@@ -210,9 +206,8 @@ export default function Navbar() {
 
       {/* === MOBILE MENU SIDEBAR === */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-ufc-dark to-ufc-black z-[60] transform transition-transform duration-400 ease-out lg:hidden shadow-2xl ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-ufc-dark to-ufc-black z-[60] transform transition-transform duration-400 ease-out lg:hidden shadow-2xl ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
         role="dialog"
         aria-modal="true"
         aria-label="Menú de navegación móvil"
@@ -241,11 +236,10 @@ export default function Navbar() {
                 setIsOpen(false);
                 // 👇 Eliminamos setActiveLink
               }}
-              className={`group flex items-center gap-4 py-4 px-5 rounded-xl font-semibold text-lg transition-all duration-200 ${
-                isActive(link.href) // 👈 Usamos isActive aquí también
+              className={`group flex items-center gap-4 py-4 px-5 rounded-xl font-semibold text-lg transition-all duration-200 ${isActive(link.href) // 👈 Usamos isActive aquí también
                   ? 'bg-ufc-red/20 text-ufc-red border-l-4 border-ufc-red'
                   : 'text-white hover:bg-ufc-black/50 hover:text-ufc-red border-l-4 border-transparent'
-              }`}
+                }`}
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <span className="w-2 h-2 rounded-full bg-ufc-red/50 group-hover:bg-ufc-red transition-colors" />

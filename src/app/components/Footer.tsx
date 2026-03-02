@@ -35,7 +35,7 @@ export default function Footer() {
 
         {/* Social and portfolio links */}
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
-          {socialLinks.map(({ href, label, icon: Icon, ariaLabel }) => (
+          {socialLinks.map(({ href, label, icon: Icon, ariaLabel }, index) => (
             <a
               key={href}
               href={href}
@@ -44,7 +44,10 @@ export default function Footer() {
               className="group flex items-center gap-2 text-ufc-gray hover:text-ufc-white transition-colors duration-200"
               aria-label={ariaLabel}
             >
-              <span className="p-2 rounded-full border border-ufc-gray/30 group-hover:border-ufc-gold group-hover:text-ufc-gold transition-all duration-200">
+              <span
+                className={`p-2 rounded-full border border-ufc-gray/30 group-hover:border-ufc-gold group-hover:text-ufc-gold transition-all duration-500 animate-float`}
+                style={{ animationDelay: `${index * 150}ms`, animationDuration: '4s' }}
+              >
                 <Icon size={18} />
               </span>
               <span className="text-sm font-medium tracking-wide">{label}</span>

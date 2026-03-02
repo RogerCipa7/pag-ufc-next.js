@@ -5,7 +5,7 @@ import {
   Trophy, Calendar, Sword, Play, ChevronRight,
   Flame, Shield, Users, LucideIcon, ArrowUp
 } from 'lucide-react';
-import { useEffect, useCallback, useRef } from 'react';
+import { useEffect, useCallback, useRef, useState } from 'react';
 
 // =========================================
 // TIPOS PARA TYPESCRIPT
@@ -146,8 +146,67 @@ const colorClasses: Record<ColorKey, ColorClasses> = {
 };
 
 // =========================================
-// COMPONENTE PRINCIPAL
+// COMPONENTES AUXILIARES
 // =========================================
+const Countdown = () => {
+  const [timer, setTimer] = useState({ d: 0, h: 0, m: 0, s: 0 });
+
+  useEffect(() => {
+    const getNextSaturday = () => {
+      const now = new Date();
+      const nextSaturday = new Date(now);
+      // Calcular cuántos días faltan para el sábado (6)
+      const daysUntilSaturday = (6 - now.getDay() + 7) % 7;
+      nextSaturday.setDate(now.getDate() + daysUntilSaturday);
+      nextSaturday.setHours(22, 0, 0, 0); // 10:00 PM
+
+      // Si ya pasó el sábado a las 10 PM, ir al próximo sábado
+      if (now > nextSaturday) {
+        nextSaturday.setDate(nextSaturday.getDate() + 7);
+      }
+      return nextSaturday;
+    };
+
+    const targetDate = getNextSaturday();
+
+    const calculateTimeLeft = () => {
+      const difference = +targetDate - +new Date();
+      if (difference > 0) {
+        return {
+          d: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          h: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          m: Math.floor((difference / 1000 / 60) % 60),
+          s: Math.floor((difference / 1000) % 60),
+        };
+      }
+      return { d: 0, h: 0, m: 0, s: 0 };
+    };
+
+    setTimer(calculateTimeLeft());
+    const interval = setInterval(() => {
+      setTimer(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const timerComponents = Object.entries(timer).map(([interval, value]) => (
+    <div key={interval} className="flex flex-col items-center">
+      <span className="text-2xl md:text-3xl font-black text-white leading-none">{String(value).padStart(2, '0')}</span>
+      <span className="text-[10px] uppercase text-ufc-gray font-bold tracking-widest mt-1">{interval}</span>
+    </div>
+  ));
+
+  return (
+    <div className="flex gap-4 md:gap-6 items-center bg-black/60 backdrop-blur-xl px-8 py-4 border border-white/10 rounded-2xl animate-float shadow-2xl shadow-red-900/10">
+      <div className="flex items-center gap-1 mr-2">
+        <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse" />
+        <span className="text-xs font-bold text-ufc-red uppercase tracking-tighter">Live</span>
+      </div>
+      {timerComponents}
+    </div>
+  );
+};
 export default function Home() {
   // Referencia para el frame de animación del scroll
   const ticking = useRef(false);
@@ -197,19 +256,25 @@ export default function Home() {
         </div>
 
         {/* Contenido Hero */}
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
+        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto pt-32 sm:pt-0">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-ufc-red/20 border border-ufc-red/40 rounded-full mb-6">
             <Flame className="w-4 h-4 text-ufc-red" />
             <span className="text-sm font-semibold text-ufc-red uppercase tracking-wider">Temporada 2024</span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black italic text-white mb-6 leading-tight drop-shadow-2xl">
-            SOMOS <span className="pr-4 text-transparent bg-clip-text bg-gradient-to-r from-ufc-red to-red-600">LEGENDARIOS</span>
+          <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-black italic text-white mb-6 leading-[1.1] sm:leading-[0.9] drop-shadow-2xl uppercase tracking-tighter px-4">
+            SOMOS <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-ufc-red via-red-500 to-red-800 animate-pulse-soft pr-4">
+              LEGENDARIOS
+            </span>
           </h1>
-
-          <p className="text-lg sm:text-xl md:text-2xl text-ufc-gray/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-ufc-gray/90 mb-10 max-w-2xl mx-auto leading-relaxed border-l-2 border-ufc-red/50 pl-6">
             Explora el universo de las artes marciales mixtas. Historia, leyendas y los próximos eventos que definirán el futuro del combate.
           </p>
+
+          <div className="flex justify-center mb-12">
+            <Countdown />
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -236,7 +301,7 @@ export default function Home() {
       </section>
 
       {/* === HISTORIA SECTION === */}
-      <section className="py-24 px-4 relative animate-fadeIn">
+      <section className="py-24 px-4 relative animate-fadeIn bg-grid-pattern">
         <div className="absolute inset-0 bg-gradient-to-b from-ufc-black via-ufc-dark/30 to-ufc-black pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -311,7 +376,7 @@ export default function Home() {
               {gallery.map((item, index) => (
                 <div
                   key={item.title}
-                  className={`group relative rounded-2xl overflow-hidden shadow-xl transition-transform duration-300 hover:scale-[1.02] ${item.featured ? 'col-span-2 h-64 md:h-72' : 'h-40 md:h-44'
+                  className={`group relative rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-[1.02] animate-glint ${item.featured ? 'col-span-2 h-64 md:h-72' : 'h-40 md:h-44'
                     }`}
                 >
                   <Image
@@ -347,7 +412,7 @@ export default function Home() {
       </section>
 
       {/* === FEATURES SECTION === */}
-      <section className="py-24 px-4 relative overflow-hidden animate-fadeIn">
+      <section className="py-24 px-4 relative overflow-hidden animate-fadeIn bg-grid-pattern">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-ufc-red/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-ufc-gold/5 rounded-full blur-3xl" />
@@ -375,7 +440,7 @@ export default function Home() {
               return (
                 <div
                   key={feature.title}
-                  className="group relative hover:-translate-y-2 transition-transform duration-300"
+                  className="group relative hover:-translate-y-2 transition-transform duration-300 animate-glint"
                 >
                   <div className={`card-pro ${colors.hover}`}>
                     <div className={`card-icon ${colors.bg} ${colors.border}`}>

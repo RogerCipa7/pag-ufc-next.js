@@ -893,7 +893,7 @@ export default function FighterProfile() {
   return (
     <main className="min-h-screen bg-ufc-black pb-20">
       {/* Botón de volver (siempre visible) */}
-      <div className="fixed top-32 left-4 z-50 lg:top-36 lg:left-8">
+      <div className="fixed top-44 left-4 z-50 lg:top-52 lg:left-8">
         <button
           onClick={() => router.push('/fighters')}
           className="flex items-center gap-2 bg-ufc-black/80 backdrop-blur-sm border border-ufc-gray/30 hover:border-ufc-red text-white px-4 py-3 rounded-sm transition-all duration-300 hover:bg-ufc-red/20 group"
@@ -906,9 +906,9 @@ export default function FighterProfile() {
 
       {/* Header con altura responsive */}
       <div
-        className={`relative pt-32 pb-12 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-20 overflow-hidden ${isLegend
-            ? 'bg-gradient-to-br from-[#1a1500] via-ufc-dark to-ufc-black'
-            : 'bg-gradient-to-br from-ufc-dark via-ufc-black to-ufc-black'
+        className={`relative pt-44 pb-12 sm:pt-48 sm:pb-16 lg:pt-60 lg:pb-20 overflow-hidden ${isLegend
+          ? 'bg-gradient-to-br from-[#1a1500] via-ufc-dark to-ufc-black'
+          : 'bg-gradient-to-br from-ufc-dark via-ufc-black to-ufc-black'
           }`}
       >
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
@@ -923,8 +923,8 @@ export default function FighterProfile() {
             <div className="relative w-full max-w-sm mx-auto lg:mx-0 lg:max-w-md">
               <div
                 className={`relative aspect-[3/4] w-full rounded-2xl overflow-hidden border-4 ${isLegend
-                    ? 'border-ufc-gold shadow-2xl shadow-ufc-gold/40'
-                    : 'border-ufc-red shadow-2xl shadow-ufc-red/40'
+                  ? 'border-ufc-gold shadow-2xl shadow-ufc-gold/40'
+                  : 'border-ufc-red shadow-2xl shadow-ufc-red/40'
                   }`}
               >
                 <Image
@@ -993,8 +993,8 @@ export default function FighterProfile() {
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                 <div
                   className={`px-6 py-3 rounded-xl border ${isLegend
-                      ? 'border-ufc-gold/50 bg-gradient-to-r from-ufc-gold/10 to-transparent'
-                      : 'border-ufc-red/30 bg-gradient-to-r from-ufc-red/10 to-transparent'
+                    ? 'border-ufc-gold/50 bg-gradient-to-r from-ufc-gold/10 to-transparent'
+                    : 'border-ufc-red/30 bg-gradient-to-r from-ufc-red/10 to-transparent'
                     }`}
                 >
                   <span
@@ -1025,8 +1025,8 @@ export default function FighterProfile() {
             {/* Biografía */}
             <section
               className={`p-6 sm:p-8 rounded-2xl border ${isLegend
-                  ? 'bg-[#1a1500] border-ufc-gold/30'
-                  : 'bg-ufc-dark border-ufc-black'
+                ? 'bg-[#1a1500] border-ufc-gold/30'
+                : 'bg-ufc-dark border-ufc-black'
                 }`}
             >
               <h2
@@ -1047,8 +1047,8 @@ export default function FighterProfile() {
             {/* Estadísticas */}
             <section
               className={`p-6 sm:p-8 rounded-2xl border ${isLegend
-                  ? 'bg-[#1a1500] border-ufc-gold/30'
-                  : 'bg-ufc-dark border-ufc-black'
+                ? 'bg-[#1a1500] border-ufc-gold/30'
+                : 'bg-ufc-dark border-ufc-black'
                 }`}
             >
               <h2
@@ -1085,8 +1085,8 @@ export default function FighterProfile() {
             {/* Peleas recientes */}
             <section
               className={`p-6 sm:p-8 rounded-2xl border ${isLegend
-                  ? 'bg-[#1a1500] border-ufc-gold/30'
-                  : 'bg-ufc-dark border-ufc-black'
+                ? 'bg-[#1a1500] border-ufc-gold/30'
+                : 'bg-ufc-dark border-ufc-black'
                 }`}
             >
               <h2
@@ -1123,10 +1123,10 @@ export default function FighterProfile() {
                       <div className="text-right">
                         <span
                           className={`text-3xl font-black ${fight.result === 'W'
-                              ? 'text-green-500'
-                              : fight.result === 'L'
-                                ? 'text-red-500'
-                                : 'text-yellow-500'
+                            ? 'text-green-500'
+                            : fight.result === 'L'
+                              ? 'text-red-500'
+                              : 'text-yellow-500'
                             }`}
                         >
                           {fight.result}
@@ -1146,8 +1146,8 @@ export default function FighterProfile() {
           <div className="space-y-6 lg:space-y-8">
             <section
               className={`p-6 sm:p-8 rounded-2xl border lg:sticky lg:top-28 ${isLegend
-                  ? 'bg-[#1a1500] border-ufc-gold/30'
-                  : 'bg-ufc-dark border-ufc-black'
+                ? 'bg-[#1a1500] border-ufc-gold/30'
+                : 'bg-ufc-dark border-ufc-black'
                 }`}
             >
               <h2
