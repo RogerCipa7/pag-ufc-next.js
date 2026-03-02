@@ -257,10 +257,6 @@ export default function Home() {
 
         {/* Contenido Hero */}
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto pt-32 sm:pt-0">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-ufc-red/20 border border-ufc-red/40 rounded-full mb-6">
-            <Flame className="w-4 h-4 text-ufc-red" />
-            <span className="text-sm font-semibold text-ufc-red uppercase tracking-wider">Temporada 2024</span>
-          </div>
 
           <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-black italic text-white mb-6 leading-[1.1] sm:leading-[0.9] drop-shadow-2xl uppercase tracking-tighter px-4">
             SOMOS <br />
